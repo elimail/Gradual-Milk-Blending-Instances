@@ -1,0 +1,60 @@
+#nodos de la red - 1000 es el nodo origen
+set Nodos:= 1000 1 2 3 4 5 6 7;
+
+#predios productores
+set I:= 1 2 3 4 5 6 7;
+
+#camiones disponibles
+set K:= 1 2;
+
+#capacidades de camiones
+param Q:=
+1 30000
+2 30000
+;
+
+#demanda por tipo de leche
+param D:=
+27297
+24135
+0
+;
+
+#ingreso por tipo de leche
+param V:=
+0.015
+0.0105
+0.0045
+;
+
+#cotas de tipo de leche
+param U:=
+5
+10
+300
+;
+
+#produccion de cada predio
+param qu :=
+1000 0
+1 8621 2 9
+2 2386 1 4
+3 2145 1 4
+4 7798 2 9
+5 7716 2 9
+6 15351 1 4
+7 7415 1 4
+;
+
+#costos de transporte
+param c[*,*]
+: 1000 1 2 3 4 5 6 7 :=
+1000 0 93 65 65 88 88 73 70
+1 93 0 45 45 38 38 49 48
+2 65 45 0 0 27 27 7 4
+3 65 45 0 0 27 27 7 4
+4 88 38 27 27 0 0 19 22
+5 88 38 27 27 0 0 19 22
+6 73 49 7 7 19 19 0 3
+7 70 48 4 4 22 22 3 0
+;
